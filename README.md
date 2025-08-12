@@ -1,82 +1,92 @@
 # 📊 App de Gestão de Orçamento
 
-Um aplicativo básico para gestão financeira pessoal, permitindo o controle de contas, créditos e débitos de forma simples e objetiva.
+Aplicação para **gestão financeira pessoal**, com backend em **Java Spring Boot** e frontend em **Angular**, permitindo controle simples e eficiente de contas, créditos e débitos.
 
 ---
 
 ## 🚀 Funcionalidades Atuais
 
-* **Cadastro básico de um único usuário**
-* **Cadastro de diferentes contas (bancos)**
-* **CRUD de Créditos e Débitos** (adicionar, visualizar, editar e excluir)
-
----
-
-## 🛠️ Tecnologias Utilizadas
-
-> *(Ajuste de acordo com o stack que você usou)*
-
-* **Backend:** Java / Spring Boot
-* **Banco de Dados:** MySQL / PostgreSQL / H2
-* **Frontend:** HTML / CSS / JavaScript ou framework usado
-* **Ferramentas:** Git, Maven/Gradle, Docker (opcional)
-
-📦 Futuro do Projeto
-Planejamos disponibilizar a aplicação na AWS, aproveitando serviços como:
-
-Amazon EC2 / Elastic Beanstalk para hospedagem
-
-Amazon RDS / DynamoDB para banco de dados
-
-Amazon SNS para notificações de contas a pagar
+* 👤 Cadastro básico de um único usuário
+* 🏦 Cadastro de diferentes contas (bancos)
+* 💰 CRUD de Créditos e Débitos (adicionar, visualizar, editar e excluir)
 
 ---
 
 ## 📌 Próximas Funcionalidades
 
-* **Contas a pagar** (com notificação quando próximo do vencimento)
-* **Relatórios por banco e geral**
-* **Suporte a múltiplos usuários**
+* 📅 Contas a pagar (com notificação de vencimento próximo)
+* 📈 Relatórios por banco e geral
+* 👥 Suporte a múltiplos usuários
 
 ---
 
-## 📦 Como Executar o Projeto
+## 🛠 Tecnologias Utilizadas
 
-1. **Clone o repositório**
+* **Backend:** Java 17 / Spring Boot 3
+* **Banco de Dados:** MySQL / PostgreSQL / H2 (para testes)
+* **Frontend:** Angular
+* **Ferramentas:** Maven, Git, Docker (opcional)
 
-   ```bash
-   git clone https://github.com/Morais453/GestaoOrcamentaria.git
-   ```
+---
 
-2. **Acesse o diretório do projeto**
+## ☁ Futuro do Projeto (Deploy na AWS)
 
-   ```bash
-   cd NOME_DO_REPOSITORIO
-   ```
+* Amazon EC2 / Elastic Beanstalk para hospedagem
+* Amazon RDS / DynamoDB para banco de dados
+* Amazon SNS para notificações
 
-3. **Instale as dependências** *(se necessário)*
+---
 
-   ```bash
-   mvn install
-   ```
+## 🌐 Front-end Angular
 
-4. **Inicie o servidor**
+O front-end está no diretório `frontend/`.
 
-   ```bash
-   mvn spring-boot:run
-   ```
+### Desenvolvimento
 
-   ou
+```bash
+cd frontend
+npm install
+ng serve
+```
 
-   ```bash
-   java -jar target/gestao-orcamento.jar
-   ```
+Acesse: `http://localhost:4200`
 
-5. **Acesse no navegador:**
+O backend deve estar rodando em `http://localhost:8080` para comunicação via API.
 
-   ```
-   http://localhost:8080
-   ```
+### Build para produção e integração com backend
+
+```bash
+cd frontend
+ng build --prod
+```
+
+Copie o conteúdo gerado para o backend:
+
+```bash
+cp -r dist/* ../backend/src/main/resources/static/
+```
+
+Ao rodar o backend, o front estará disponível em: `http://localhost:8080`
+
+---
+
+## 🚀 Backend Spring Boot
+
+### Rodar o backend
+
+```bash
+cd backend
+mvn install
+mvn spring-boot:run
+```
+
+Ou:
+
+```bash
+java -jar target/gestao-orcamento.jar
+```
+
+Acesse: `http://localhost:8080`
 
 ---
 
@@ -84,20 +94,32 @@ Amazon SNS para notificações de contas a pagar
 
 ```
 gestao-orcamento/
-│── src/
-│   ├── main/
-│   │   ├── java/        # Código fonte backend
-│   │   ├── resources/   # Configurações e templates
-│   └── test/            # Testes automatizados
-│── pom.xml              # Configuração Maven
-│── README.md            # Documentação do projeto
+│
+├── backend/
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/
+│   │   │   ├── resources/
+│   │   │   │   └── static/       # Build Angular para produção
+│   │   └── test/
+│   ├── pom.xml
+│
+├── frontend/
+│   ├── src/
+│   ├── e2e/
+│   ├── angular.json
+│   ├── package.json
+│   └── tsconfig.json
+│
+├── README.md
+└── .gitignore
 ```
 
 ---
 
-## 🤝 Contribuição
+## 🤝 Como Contribuir
 
-1. Faça um **fork** do projeto
+1. Fork o projeto
 2. Crie uma branch para sua feature:
 
    ```bash
@@ -106,11 +128,17 @@ gestao-orcamento/
 3. Faça commit das alterações:
 
    ```bash
-   git commit -m 'Minha nova feature'
+   git commit -m "Minha nova feature"
    ```
-4. Envie para o repositório remoto:
+4. Envie para o remoto:
 
    ```bash
    git push origin minha-feature
    ```
-5. Abra um **Pull Request**
+5. Abra um Pull Request
+
+---
+
+## 📜 Licença
+
+Este projeto está sob a licença **MIT**.
