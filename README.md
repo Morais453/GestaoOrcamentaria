@@ -29,6 +29,7 @@ Amazon EC2 / Elastic Beanstalk para hospedagem
 Amazon RDS / DynamoDB para banco de dados
 
 Amazon SNS para notificações de contas a pagar
+
 ---
 
 ## 📌 Próximas Funcionalidades
