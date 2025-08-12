@@ -21,6 +21,14 @@ Um aplicativo básico para gestão financeira pessoal, permitindo o controle de 
 * **Frontend:** HTML / CSS / JavaScript ou framework usado
 * **Ferramentas:** Git, Maven/Gradle, Docker (opcional)
 
+📦 Futuro do Projeto
+Planejamos disponibilizar a aplicação na AWS, aproveitando serviços como:
+
+Amazon EC2 / Elastic Beanstalk para hospedagem
+
+Amazon RDS / DynamoDB para banco de dados
+
+Amazon SNS para notificações de contas a pagar
 ---
 
 ## 📌 Próximas Funcionalidades
